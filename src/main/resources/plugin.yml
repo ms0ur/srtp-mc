@@ -1,0 +1,12 @@
+name: SRTP
+version: '${version}'
+main: xyz.survsmc.ms0ur.srtp.Main
+api-version: 1.18
+load: STARTUP
+authors: [ ms0ur ]
+description: Plugin for random teleport
+website: survsmc.xyz
+commands:
+  rtp:
+    description: Random teleport.
+    usage: /<command>
