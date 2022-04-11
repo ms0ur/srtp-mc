@@ -2,21 +2,23 @@ package xyz.survsmc.ms0ur.srtp;
 
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
-public final class Main extends JavaPlugin implements Listener {
+
+
+public final class Main extends JavaPlugin{
 
     public static class  SettingsPlugin{
         public static boolean enable;
-        public static World world;
     }
 
     public static class Lang_str{
         public static String searchCoords;
         public static String teleportNow;
+        public static String noConsole;
+
     }
 
     public static class Coord_lim{
@@ -49,6 +51,8 @@ public final class Main extends JavaPlugin implements Listener {
             config.set("coords_search", "Поиск безопасной позиции для телепорта...");
         if(!config.isString("teleport_now"))//позиция найдена, телепортация
             config.set("teleport_now", "Телепортация...");
+        if(!config.isString("no_console"))
+            config.set("no_console", "Невозможно использовать rtp из консоли!");
 
         //init
         SettingsPlugin.enable = config.getBoolean("enable");
@@ -58,6 +62,7 @@ public final class Main extends JavaPlugin implements Listener {
         Coord_lim.z2 = config.getInt("Z2_LIM");
         Lang_str.searchCoords=config.getString("coords_search");
         Lang_str.teleportNow=config.getString("teleport_now");
+        Lang_str.noConsole=config.getString("no_console");
         this.saveConfig();
     }
 
