@@ -48,11 +48,11 @@ public final class Main extends JavaPlugin{
             config.set("Z2_LIM", -5000);
         //lang config
         if(!config.isString("coords_search"))//поиск координат
-            config.set("coords_search", "Поиск безопасной позиции для телепорта...");
+            config.set("coords_search", "Finding a safe teleport position...");
         if(!config.isString("teleport_now"))//позиция найдена, телепортация
-            config.set("teleport_now", "Телепортация...");
+            config.set("teleport_now", "Teleportation...");
         if(!config.isString("no_console"))
-            config.set("no_console", "Невозможно использовать rtp из консоли!");
+            config.set("no_console", "It is not possible to use rtp from the console!");
 
         //init
         SettingsPlugin.enable = config.getBoolean("enable");
